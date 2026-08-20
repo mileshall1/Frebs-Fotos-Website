@@ -73,6 +73,22 @@ const projects = [
   },
 ];
 
+const carouselImages = [
+  ["/images/serenity-01.jpg", "Natalia graduation portrait"],
+  ["/images/portrait-02.jpg", "Ahmad editorial portrait"],
+  ["/images/grad-01.jpg", "Serenity portrait"],
+  ["/images/portrait-01.jpg", "Fight or Flight portrait"],
+  ["/images/grad-02.jpg", "Graduation portrait in sunlight"],
+  ["/images/serenity-02.jpg", "Natalia holding flowers"],
+  ["/images/touchline-hires.jpg", "Football editorial"],
+];
+
+const films = [
+  { title: "Cologne Spec", detail: "Spec Film · 01:04", image: "/images/film.jpg", href: "https://www.instagram.com/freb.fotos/reel/DcCZ7lrvqRU/" },
+  { title: "Nocturne", detail: "Fashion Film · 00:24", image: "/images/nocturne.jpg", href: "https://www.instagram.com/freb.fotos/reel/DcCafihPYpT/" },
+  { title: "Visual Study 01", detail: "Short Film · 00:18", image: "/images/editorial.jpg", href: "https://www.instagram.com/freb.fotos/reel/Dbv-2YWh7vs/" },
+];
+
 export default function Home() {
   return (
     <main>
@@ -82,6 +98,7 @@ export default function Home() {
         </a>
         <nav aria-label="Main navigation">
           <a href="#work">Work</a>
+          <a href="#motion">Motion</a>
           <a href="#about">About</a>
           <a href="#contact">Contact</a>
         </nav>
@@ -92,8 +109,8 @@ export default function Home() {
 
       <section className="hero" id="top">
         <Image
-          src="/images/portrait-02.jpg"
-          alt="Ahmad photographed by Frebruk"
+          src="/images/profile.jpg"
+          alt="Frebruk's self portrait"
           fill
           priority
           sizes="100vw"
@@ -107,8 +124,24 @@ export default function Home() {
         <p className="hero-location">Washington, D.C. / Available worldwide</p>
       </section>
 
+      <section className="photo-reel" aria-labelledby="photo-reel-title">
+        <div className="photo-reel-head">
+          <p className="eyebrow">01 / Recent frames</p>
+          <h2 id="photo-reel-title">In the <em>viewfinder.</em></h2>
+          <p>Drag or swipe to explore ↔</p>
+        </div>
+        <div className="carousel" role="region" aria-label="Frebruk photography carousel" tabIndex={0}>
+          {carouselImages.map(([src, alt], index) => (
+            <figure className="carousel-slide" key={src}>
+              <Image src={src} alt={alt} fill sizes="(max-width: 760px) 78vw, 31vw" />
+              <figcaption>{String(index + 1).padStart(2, "0")} / {String(carouselImages.length).padStart(2, "0")}</figcaption>
+            </figure>
+          ))}
+        </div>
+      </section>
+
       <section className="intro" id="about">
-        <p className="eyebrow">01 / Point of view</p>
+        <p className="eyebrow">02 / Point of view</p>
         <p className="intro-copy">
           I make images that live somewhere between <em>memory</em> and motion—
           honest portraits, quiet tension, and stories you can feel before you understand.
@@ -120,7 +153,7 @@ export default function Home() {
 
       <section className="work" id="work">
         <div className="section-heading">
-          <p className="eyebrow">02 / Selected work</p>
+          <p className="eyebrow">03 / Selected work</p>
           <h2>Stories in<br /><em>stillness.</em></h2>
           <p className="work-note">A selection of commissioned and personal work, 2025—2026.</p>
         </div>
@@ -145,19 +178,38 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="motion" id="motion">
+        <div className="motion-heading">
+          <p className="eyebrow">04 / Moving image</p>
+          <h2>Stories that<br /><em>move.</em></h2>
+          <p>Direction, camera, edit, and visual experiments.</p>
+        </div>
+        <div className="film-list">
+          {films.map((film, index) => (
+            <a className="film" href={film.href} target="_blank" rel="noreferrer" key={film.title}>
+              <div className="film-still">
+                <Image src={film.image} alt={`${film.title} film still`} fill sizes="(max-width: 760px) 100vw, 33vw" />
+                <span className="play" aria-hidden="true">▶</span>
+              </div>
+              <div className="film-meta"><span>{String(index + 1).padStart(2, "0")}</span><h3>{film.title}</h3><p>{film.detail}</p><span>Watch ↗</span></div>
+            </a>
+          ))}
+        </div>
+      </section>
+
       <section className="statement">
         <div className="statement-track" aria-hidden="true">
           <span>VISUAL EMOTION · VISUAL EMOTION · VISUAL EMOTION · </span>
           <span>VISUAL EMOTION · VISUAL EMOTION · VISUAL EMOTION · </span>
         </div>
         <div className="statement-inner">
-          <p className="eyebrow">03 / Practice</p>
+          <p className="eyebrow">05 / Practice</p>
           <p>Light is the language.<br />People are the story.</p>
         </div>
       </section>
 
       <footer id="contact">
-        <p className="eyebrow">04 / Let&apos;s make something</p>
+        <p className="eyebrow">06 / Let&apos;s make something</p>
         <h2>Have a story<br />worth <em>feeling?</em></h2>
         <a className="contact-link" href="mailto:hello@frebrukmikre.com">hello@frebrukmikre.com <span>↗</span></a>
         <div className="footer-bottom">
