@@ -100,14 +100,11 @@ export default function Home() {
           className="hero-image"
         />
         <div className="hero-shade" />
-        <p className="hero-kicker">Independent image maker / 2026</p>
+        <p className="hero-kicker">Photographer · Filmmaker</p>
         <h1 aria-label="Frebruk">FREBRUK</h1>
         <p className="hero-tagline">Visual emotion,<br />made tangible.</p>
         <a className="hero-cta" href="#work"><span>Explore selected work</span><span>↓</span></a>
         <p className="hero-location">Washington, D.C. / Available worldwide</p>
-        <div className="hero-index" aria-hidden="true">
-          <span>Portrait</span><span>Editorial</span><span>Campaign</span><span>Motion</span>
-        </div>
       </section>
 
       <section className="intro" id="about">
