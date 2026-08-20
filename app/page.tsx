@@ -108,14 +108,18 @@ export default function Home() {
       </header>
 
       <section className="hero" id="top">
-        <Image
-          src="/images/profile.jpg"
-          alt="Frebruk's self portrait"
-          fill
-          priority
-          sizes="100vw"
-          className="hero-image"
-        />
+        <video
+          className="hero-video"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          poster="/images/status-poster.jpg"
+          aria-hidden="true"
+        >
+          <source src="/status-background.mp4" type="video/mp4" />
+        </video>
         <div className="hero-shade" />
         <p className="hero-kicker">Photographer · Filmmaker</p>
         <h1 aria-label="Frebruk">FREBRUK</h1>
