@@ -179,16 +179,17 @@ export default function Home() {
           <p className="work-note">A selection of commissioned and personal work, 2025—2026.</p>
         </div>
 
-        <div className="work-overview" aria-label="Portfolio overview">
-          <p><span>10</span>Selected stories</p>
-          <p><span>04</span>Disciplines</p>
-          <p><span>02</span>Years in frame</p>
-          <p><span>DC</span>Based / Worldwide</p>
-        </div>
-
         <article className="featured-project">
           <div className="featured-image">
-            <Image src="/images/film-still-hires.jpg" alt="Status Update visual study film still" fill sizes="100vw" />
+            <div className="featured-frame featured-frame-main">
+              <Image src="/images/status-01.jpg" alt="Frebruk seated in a cinematic self-portrait" fill sizes="(max-width: 760px) 100vw, 42vw" />
+            </div>
+            <div className="featured-frame featured-frame-top">
+              <Image src="/images/status-02.jpg" alt="Frebruk portrait against a wooden backdrop" fill sizes="(max-width: 760px) 50vw, 24vw" />
+            </div>
+            <div className="featured-frame featured-frame-bottom">
+              <Image src="/images/status-03.jpg" alt="Low-angle close portrait of Frebruk" fill sizes="(max-width: 760px) 50vw, 24vw" />
+            </div>
             <span className="featured-label">Featured study / 2026</span>
           </div>
           <div className="featured-copy">
