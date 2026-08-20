@@ -38,11 +38,11 @@ const projects = [
     href: "https://www.instagram.com/freb.fotos/p/DYx-YT5jj8I/",
   },
   {
-    title: "Visual Notes",
-    type: "Process / Personal Archive",
+    title: "Fight or Flight",
+    type: "Portrait / Editorial",
     year: "2026",
-    image: "/images/ig-visual-notes.jpg",
-    href: "https://www.instagram.com/freb.fotos/p/DcEqMuQj0b_/",
+    image: "/images/portrait-01.jpg",
+    href: "https://www.instagram.com/freb.fotos/",
   },
   {
     title: "After Hours",
