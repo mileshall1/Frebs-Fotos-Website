@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Frebruk — Photographer & Filmmaker",
+  title: "Freb's Fotos — Photographer & Filmmaker",
   description: "Visual emotion by Frebruk Mikre. Portrait, editorial, campaign, and film work.",
   icons: {
     icon: "/favicon.svg",

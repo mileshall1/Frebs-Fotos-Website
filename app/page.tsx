@@ -108,21 +108,17 @@ export default function Home() {
       </header>
 
       <section className="hero" id="top">
-        <video
-          className="hero-video"
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-          poster="/images/status-poster.jpg"
-          aria-hidden="true"
-        >
-          <source src="/status-background.mp4" type="video/mp4" />
-        </video>
+        <Image
+          src="/images/profile.jpg"
+          alt="Freb's portrait"
+          fill
+          priority
+          sizes="100vw"
+          className="hero-image"
+        />
         <div className="hero-shade" />
         <p className="hero-kicker">Photographer · Filmmaker</p>
-        <h1 aria-label="Frebruk">FREBRUK</h1>
+        <h1 aria-label="Freb's Fotos">FREB&apos;S FOTOS</h1>
         <p className="hero-tagline">Visual emotion,<br />made tangible.</p>
         <a className="hero-cta" href="#work"><span>Explore selected work</span><span>↓</span></a>
         <p className="hero-location">Washington, D.C. / Available worldwide</p>
