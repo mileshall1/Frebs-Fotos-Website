@@ -3,6 +3,15 @@ import HeroVideo from "./HeroVideo";
 
 const projects = [
   {
+    title: "Status Update",
+    type: "Self-directed Portrait Film",
+    year: "2026",
+    image: "/images/status-02.jpg",
+    className: "project-wide",
+    summary: "A self-portrait in motion.",
+    tags: ["Direction", "Portrait", "Film"],
+  },
+  {
     title: "Ahmad",
     type: "Portrait / Campaign",
     year: "2026",
@@ -174,49 +183,24 @@ export default function Home() {
 
       <section className="work" id="work">
         <div className="section-heading">
-          <p className="eyebrow">03 / Selected work</p>
-          <h2>Stories in<br /><em>stillness.</em></h2>
-          <p className="work-note">A selection of commissioned and personal work, 2025—2026.</p>
+          <div className="work-period"><p>2025—Now</p><p>Selected photography<br />and moving image</p></div>
+          <h2>WORK</h2>
+          <p className="work-note">Scroll to explore ↓</p>
         </div>
 
-        <article className="featured-project">
-          <div className="featured-image">
-            <div className="featured-frame featured-frame-main">
-              <Image src="/images/status-01.jpg" alt="Frebruk seated in a cinematic self-portrait" fill sizes="(max-width: 760px) 100vw, 42vw" />
-            </div>
-            <div className="featured-frame featured-frame-top">
-              <Image src="/images/status-02.jpg" alt="Frebruk portrait against a wooden backdrop" fill sizes="(max-width: 760px) 50vw, 24vw" />
-            </div>
-            <div className="featured-frame featured-frame-bottom">
-              <Image src="/images/status-03.jpg" alt="Low-angle close portrait of Frebruk" fill sizes="(max-width: 760px) 50vw, 24vw" />
-            </div>
-            <span className="featured-label">Featured study / 2026</span>
-          </div>
-          <div className="featured-copy">
-            <p className="eyebrow">Portrait · Motion · Self-directed</p>
-            <h3>Status<br /><em>Update.</em></h3>
-            <p className="featured-description">A self-portrait in motion—ordinary spaces, close observation, and the tension between how life feels and how it appears.</p>
-            <div className="featured-credits"><span>Direction / Frebruk</span><span>Camera / Frebruk</span><span>Edit / Frebruk</span></div>
-            <a href="https://www.instagram.com/p/DOZ9aydjpOm/" target="_blank" rel="noreferrer">View the film on Instagram <span>↗</span></a>
-          </div>
-        </article>
-
-        <div className="projects">
+        <div className="work-list">
           {projects.map((project, index) => (
-            <article className={`project ${project.className}`} key={project.title}>
-              <a href="#contact" aria-label={`${project.title}, ${project.type}`}>
-                <div className="project-image-wrap">
-                  <Image src={project.image} alt={`${project.title} — ${project.type}`} fill sizes="(max-width: 760px) 100vw, 50vw" className="project-image" />
-                  <span className="project-index">{String(index + 1).padStart(2, "0")}</span>
-                  <span className="view-project">View project ↗</span>
+            <article className="work-entry" key={project.title}>
+              <a href={index === 0 ? "https://www.instagram.com/p/DOZ9aydjpOm/" : "#contact"} target={index === 0 ? "_blank" : undefined} rel={index === 0 ? "noreferrer" : undefined} aria-label={`${project.title}, ${project.type}`}>
+                <div className="work-image">
+                  <Image src={project.image} alt={`${project.title} — ${project.type}`} fill sizes="(max-width: 760px) 100vw, 96vw" />
                 </div>
-                <div className="project-caption">
+                <div className="work-caption">
+                  <p>{String(index + 1).padStart(2, "0")}</p>
                   <h3>{project.title}</h3>
                   <p>{project.type}</p>
-                  <p>{project.year}</p>
+                  <p>{project.year} ↗</p>
                 </div>
-                <p className="project-summary">{project.summary}</p>
-                <div className="project-tags">{project.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
               </a>
             </article>
           ))}
