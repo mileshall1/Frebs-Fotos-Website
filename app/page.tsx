@@ -2,46 +2,74 @@ import Image from "next/image";
 
 const projects = [
   {
-    title: "Nocturne",
-    type: "Fashion Film",
+    title: "Ahmad",
+    type: "Portrait / Campaign",
     year: "2026",
-    image: "/images/nocturne.jpg",
-    className: "project-wide",
-  },
-  {
-    title: "Serenity",
-    type: "Portrait Series",
-    year: "2026",
-    image: "/images/monochrome.jpg",
-    className: "project-tall",
-  },
-  {
-    title: "Cologne Spec",
-    type: "Campaign",
-    year: "2026",
-    image: "/images/portrait.jpg",
-    className: "project-square",
-  },
-  {
-    title: "Touchline",
-    type: "Editorial",
-    year: "2026",
-    image: "/images/street.jpg",
-    className: "project-wide",
+    image: "/images/portrait-02.jpg",
+    className: "project-tall project-major",
   },
   {
     title: "Natalia",
-    type: "Portrait",
+    type: "Portrait / Graduation",
     year: "2026",
-    image: "/images/natalia.jpg",
-    className: "project-tall",
+    image: "/images/serenity-01.jpg",
+    className: "project-tall project-minor",
   },
   {
-    title: "Ahmad",
+    title: "Serenity",
+    type: "Editorial Portrait",
+    year: "2026",
+    image: "/images/grad-01.jpg",
+    className: "project-tall project-minor",
+  },
+  {
+    title: "After Hours",
+    type: "Fashion Film",
+    year: "2026",
+    image: "/images/nocturne.jpg",
+    className: "project-wide project-major",
+  },
+  {
+    title: "Fight or Flight",
+    type: "Portrait / Editorial",
+    year: "2026",
+    image: "/images/portrait-01.jpg",
+    className: "project-tall project-minor",
+  },
+  {
+    title: "Touchline",
+    type: "Sport / Personal",
+    year: "2026",
+    image: "/images/touchline-hires.jpg",
+    className: "project-square project-minor",
+  },
+  {
+    title: "No. 02",
+    type: "Moving Image",
+    year: "2026",
+    image: "/images/editorial-hires.jpg",
+    className: "project-square project-minor",
+  },
+  {
+    title: "Serenity II",
+    type: "Portrait / Graduation",
+    year: "2026",
+    image: "/images/grad-02.jpg",
+    className: "project-tall project-major",
+  },
+  {
+    title: "The Graduate",
     type: "Commission",
     year: "2026",
-    image: "/images/close.jpg",
-    className: "project-square",
+    image: "/images/serenity-02.jpg",
+    className: "project-tall project-minor",
+  },
+  {
+    title: "Cologne Spec",
+    type: "Campaign Study",
+    year: "2025",
+    image: "/images/portrait.jpg",
+    className: "project-square project-minor",
   },
 ];
 
@@ -64,19 +92,22 @@ export default function Home() {
 
       <section className="hero" id="top">
         <Image
-          src="/images/nocturne.jpg"
-          alt="Cinematic portrait study by Frebruk"
+          src="/images/portrait-02.jpg"
+          alt="Ahmad photographed by Frebruk"
           fill
           priority
           sizes="100vw"
           className="hero-image"
         />
         <div className="hero-shade" />
-        <p className="hero-kicker">Photographer · Filmmaker</p>
+        <p className="hero-kicker">Independent image maker / 2026</p>
         <h1 aria-label="Frebruk">FREBRUK</h1>
         <p className="hero-tagline">Visual emotion,<br />made tangible.</p>
         <a className="hero-cta" href="#work"><span>Explore selected work</span><span>↓</span></a>
         <p className="hero-location">Washington, D.C. / Available worldwide</p>
+        <div className="hero-index" aria-hidden="true">
+          <span>Portrait</span><span>Editorial</span><span>Campaign</span><span>Motion</span>
+        </div>
       </section>
 
       <section className="intro" id="about">
