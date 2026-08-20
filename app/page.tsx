@@ -8,6 +8,8 @@ const projects = [
     year: "2026",
     image: "/images/portrait-02.jpg",
     className: "project-tall project-major",
+    summary: "A portrait study shaped by direct gaze, quiet confidence, and sculpted natural light.",
+    tags: ["Direction", "Portraiture", "Color"],
   },
   {
     title: "Natalia",
@@ -15,6 +17,8 @@ const projects = [
     year: "2026",
     image: "/images/serenity-01.jpg",
     className: "project-tall project-minor",
+    summary: "A graduation story photographed with warmth, softness, and a sense of becoming.",
+    tags: ["Portraiture", "Graduation"],
   },
   {
     title: "Serenity",
@@ -22,6 +26,8 @@ const projects = [
     year: "2026",
     image: "/images/grad-01.jpg",
     className: "project-tall project-minor",
+    summary: "Still, intimate frames built around gesture, texture, and the space between moments.",
+    tags: ["Editorial", "Natural light"],
   },
   {
     title: "After Hours",
@@ -29,6 +35,8 @@ const projects = [
     year: "2026",
     image: "/images/nocturne.jpg",
     className: "project-wide project-major",
+    summary: "A nocturnal fashion experiment moving between shadow, silhouette, and electric color.",
+    tags: ["Film", "Fashion", "Edit"],
   },
   {
     title: "Fight or Flight",
@@ -36,6 +44,8 @@ const projects = [
     year: "2026",
     image: "/images/portrait-01.jpg",
     className: "project-tall project-minor",
+    summary: "An expressive portrait series balancing vulnerability with a harder editorial edge.",
+    tags: ["Portraiture", "Editorial"],
   },
   {
     title: "Touchline",
@@ -43,6 +53,8 @@ const projects = [
     year: "2026",
     image: "/images/touchline-hires.jpg",
     className: "project-square project-minor",
+    summary: "Movement, anticipation, and human detail observed from the edge of the game.",
+    tags: ["Sport", "Documentary"],
   },
   {
     title: "No. 02",
@@ -50,6 +62,8 @@ const projects = [
     year: "2026",
     image: "/images/editorial-hires.jpg",
     className: "project-square project-minor",
+    summary: "A short visual exercise where rhythm, framing, and atmosphere lead the narrative.",
+    tags: ["Motion", "Direction"],
   },
   {
     title: "Serenity II",
@@ -57,6 +71,8 @@ const projects = [
     year: "2026",
     image: "/images/grad-02.jpg",
     className: "project-tall project-major",
+    summary: "A continuation of the graduation series, carried by sunlight and honest expression.",
+    tags: ["Portraiture", "Commission"],
   },
   {
     title: "The Graduate",
@@ -64,6 +80,8 @@ const projects = [
     year: "2026",
     image: "/images/serenity-02.jpg",
     className: "project-tall project-minor",
+    summary: "A personal milestone translated into relaxed, timeless portraiture.",
+    tags: ["Graduation", "Lifestyle"],
   },
   {
     title: "Cologne Spec",
@@ -71,6 +89,8 @@ const projects = [
     year: "2025",
     image: "/images/portrait.jpg",
     className: "project-square project-minor",
+    summary: "A fragrance-film study focused on tactile detail, restraint, and campaign pacing.",
+    tags: ["Spec", "Product", "Film"],
   },
 ];
 
@@ -159,6 +179,27 @@ export default function Home() {
           <p className="work-note">A selection of commissioned and personal work, 2025—2026.</p>
         </div>
 
+        <div className="work-overview" aria-label="Portfolio overview">
+          <p><span>10</span>Selected stories</p>
+          <p><span>04</span>Disciplines</p>
+          <p><span>02</span>Years in frame</p>
+          <p><span>DC</span>Based / Worldwide</p>
+        </div>
+
+        <article className="featured-project">
+          <div className="featured-image">
+            <Image src="/images/film-still-hires.jpg" alt="Status Update visual study film still" fill sizes="100vw" />
+            <span className="featured-label">Featured study / 2026</span>
+          </div>
+          <div className="featured-copy">
+            <p className="eyebrow">Portrait · Motion · Self-directed</p>
+            <h3>Status<br /><em>Update.</em></h3>
+            <p className="featured-description">A self-portrait in motion—ordinary spaces, close observation, and the tension between how life feels and how it appears.</p>
+            <div className="featured-credits"><span>Direction / Frebruk</span><span>Camera / Frebruk</span><span>Edit / Frebruk</span></div>
+            <a href="https://www.instagram.com/p/DOZ9aydjpOm/" target="_blank" rel="noreferrer">View the film on Instagram <span>↗</span></a>
+          </div>
+        </article>
+
         <div className="projects">
           {projects.map((project, index) => (
             <article className={`project ${project.className}`} key={project.title}>
@@ -173,6 +214,8 @@ export default function Home() {
                   <p>{project.type}</p>
                   <p>{project.year}</p>
                 </div>
+                <p className="project-summary">{project.summary}</p>
+                <div className="project-tags">{project.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
               </a>
             </article>
           ))}
