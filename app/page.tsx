@@ -133,7 +133,7 @@ export default function Home() {
         <div className="hero-shade" />
         <div className="hero-text-mask" aria-hidden="true" />
         <p className="hero-kicker">Photographer · Filmmaker</p>
-        <h1 aria-label="Freb's Fotos">FREB&apos;S FOTOS</h1>
+        <h1 aria-label="Freb's Fotos"><span>FREB&apos;S</span><span>FOTOS</span></h1>
         <p className="hero-tagline">Visual emotion,<br />made tangible.</p>
         <a className="hero-cta" href="#work"><span>Explore selected work</span><span>↓</span></a>
         <p className="hero-location">Washington, D.C. / Available worldwide</p>

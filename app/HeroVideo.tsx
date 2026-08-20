@@ -17,7 +17,6 @@ function randomVideo(excluding?: number) {
 export default function HeroVideo() {
   const [activeVideo, setActiveVideo] = useState(0);
   const videoRef = useRef<HTMLVideoElement>(null);
-  const ambientVideoRef = useRef<HTMLVideoElement>(null);
 
   const playAnother = useCallback(() => {
     setActiveVideo((current) => randomVideo(current));
@@ -29,38 +28,23 @@ export default function HeroVideo() {
 
   useEffect(() => {
     videoRef.current?.play().catch(() => undefined);
-    ambientVideoRef.current?.play().catch(() => undefined);
   }, [activeVideo]);
 
   return (
-    <>
-      <video
-        ref={ambientVideoRef}
-        key={`ambient-${heroVideos[activeVideo]}`}
-        className="hero-video hero-video--ambient"
-        autoPlay
-        muted
-        playsInline
-        preload="auto"
-        aria-hidden="true"
-      >
-        <source src={heroVideos[activeVideo]} type="video/mp4" />
-      </video>
-      <video
-        ref={videoRef}
-        key={`primary-${heroVideos[activeVideo]}`}
-        className="hero-video hero-video--primary"
-        autoPlay
-        muted
-        playsInline
-        preload="auto"
-        poster="/images/profile.jpg"
-        aria-hidden="true"
-        onEnded={playAnother}
-        onError={playAnother}
-      >
-        <source src={heroVideos[activeVideo]} type="video/mp4" />
-      </video>
-    </>
+    <video
+      ref={videoRef}
+      key={heroVideos[activeVideo]}
+      className="hero-video"
+      autoPlay
+      muted
+      playsInline
+      preload="auto"
+      poster="/images/profile.jpg"
+      aria-hidden="true"
+      onEnded={playAnother}
+      onError={playAnother}
+    >
+      <source src={heroVideos[activeVideo]} type="video/mp4" />
+    </video>
   );
 }
