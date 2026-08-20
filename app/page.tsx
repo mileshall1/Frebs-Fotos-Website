@@ -134,13 +134,19 @@ export default function Home() {
           <h2 id="photo-reel-title">In the <em>viewfinder.</em></h2>
           <p>Drag or swipe to explore ↔</p>
         </div>
-        <div className="carousel" role="region" aria-label="Frebruk photography carousel" tabIndex={0}>
-          {carouselImages.map(([src, alt], index) => (
-            <figure className="carousel-slide" key={src}>
-              <Image src={src} alt={alt} fill sizes="(max-width: 760px) 78vw, 31vw" />
-              <figcaption>{String(index + 1).padStart(2, "0")} / {String(carouselImages.length).padStart(2, "0")}</figcaption>
-            </figure>
-          ))}
+        <div className="carousel" role="region" aria-label="Automatically moving Frebruk photography carousel" tabIndex={0}>
+          <div className="carousel-track">
+            {[...carouselImages, ...carouselImages].map(([src, alt], index) => {
+              const position = index % carouselImages.length;
+              const duplicate = index >= carouselImages.length;
+              return (
+                <figure className="carousel-slide" key={`${src}-${index}`} aria-hidden={duplicate || undefined}>
+                  <Image src={src} alt={duplicate ? "" : alt} fill sizes="(max-width: 760px) 78vw, 31vw" />
+                  <figcaption>{String(position + 1).padStart(2, "0")} / {String(carouselImages.length).padStart(2, "0")}</figcaption>
+                </figure>
+              );
+            })}
+          </div>
         </div>
       </section>
 
