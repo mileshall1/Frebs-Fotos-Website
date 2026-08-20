@@ -141,15 +141,19 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="intro" id="about">
-        <p className="eyebrow">02 / Point of view</p>
-        <p className="intro-copy">
-          I make images that live somewhere between <em>memory</em> and motion—
-          honest portraits, quiet tension, and stories you can feel before you understand.
-        </p>
-        <div className="intro-meta">
-          <span>Portrait</span><span>Editorial</span><span>Campaign</span><span>Film</span>
+      <section className="about-showcase" id="about" aria-labelledby="about-title">
+        <Image src="/images/status-02.jpg" alt="Frebruk on location" fill sizes="100vw" className="about-background" />
+        <div className="about-shade" />
+        <p className="about-role">Photographer / Filmmaker<br />Washington, D.C.</p>
+        <div className="about-inset">
+          <Image src="/images/status-01.jpg" alt="Cinematic portrait of Frebruk" fill sizes="(max-width: 760px) 70vw, 38vw" />
         </div>
+        <h2 id="about-title">FREBRUK</h2>
+        <div className="about-copy">
+          <p>Frebruk is a Washington, D.C.–based photographer and filmmaker with a quiet, instinctive approach to visual storytelling.</p>
+          <p>Working across portraiture, editorial, sport, campaign, and moving image, he builds photographs around honest expression, thoughtful light, and the tension between memory and motion. His aim is simple: make images you can feel before you understand.</p>
+        </div>
+        <a className="about-scroll" href="#work" aria-label="Continue to selected work">↓</a>
       </section>
 
       <section className="work" id="work">
