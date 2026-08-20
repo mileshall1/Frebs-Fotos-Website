@@ -16,9 +16,11 @@ function randomVideo(excluding?: number) {
 
 export default function HeroVideo() {
   const [activeVideo, setActiveVideo] = useState(0);
+  const [orientation, setOrientation] = useState<"unknown" | "portrait" | "landscape">("unknown");
   const videoRef = useRef<HTMLVideoElement>(null);
 
   const playAnother = useCallback(() => {
+    setOrientation("unknown");
     setActiveVideo((current) => randomVideo(current));
   }, []);
 
@@ -34,13 +36,17 @@ export default function HeroVideo() {
     <video
       ref={videoRef}
       key={heroVideos[activeVideo]}
-      className="hero-video"
+      className={`hero-video hero-video--${orientation}`}
       autoPlay
       muted
       playsInline
       preload="auto"
       poster="/images/profile.jpg"
       aria-hidden="true"
+      onLoadedMetadata={(event) => {
+        const video = event.currentTarget;
+        setOrientation(video.videoHeight > video.videoWidth ? "portrait" : "landscape");
+      }}
       onEnded={playAnother}
       onError={playAnother}
     >
