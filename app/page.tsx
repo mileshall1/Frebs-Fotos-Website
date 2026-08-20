@@ -115,7 +115,7 @@ export default function Home() {
     <main>
       <header className="site-header">
         <a className="wordmark" href="#top" aria-label="Frebruk home">
-          FREB<span className="wordmark-dot">.</span>
+          FREBRUK
         </a>
         <nav aria-label="Main navigation">
           <a href="#work">Work</a>
