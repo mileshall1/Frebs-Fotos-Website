@@ -1,0 +1,39 @@
+{
+  "post": "https://www.instagram.com/p/Df7sQsTm-kG/",
+  "published": "2026-11-19",
+  "caption": "Selects from a recent wedding I had the privilege of assisting.",
+  "images": [
+    {
+      "asset": "/images/wedding/wedding-01.webp",
+      "mediaId": "4034010765223872791"
+    },
+    {
+      "asset": "/images/wedding/wedding-02.webp",
+      "mediaId": "4034010766524159265"
+    },
+    {
+      "asset": "/images/wedding/wedding-03.webp",
+      "mediaId": "4034010769032414113"
+    },
+    {
+      "asset": "/images/wedding/wedding-04.webp",
+      "mediaId": "4034010770332711837"
+    },
+    {
+      "asset": "/images/wedding/wedding-05.webp",
+      "mediaId": "4034010771582466082"
+    },
+    {
+      "asset": "/images/wedding/wedding-06.webp",
+      "mediaId": "4034010773067306416"
+    },
+    {
+      "asset": "/images/wedding/wedding-07.webp",
+      "mediaId": "4034010775416051576"
+    },
+    {
+      "asset": "/images/wedding/wedding-08.webp",
+      "mediaId": "4034010777479628028"
+    }
+  ]
+}
